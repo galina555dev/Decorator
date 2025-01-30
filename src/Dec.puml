@@ -1,0 +1,34 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+
+
+DecoratorTest--Ristretto
+Ristretto--UnknowCoffe
+DecoratorTest---Tea
+class Ristretto extends CoffeDecorator {
+    public Ristretto(Drink decorated);
+    public void water() ;
+    private void setCoffein();
+    private void setColdwater();
+}
+interface Drink {
+    void water();
+}
+abstract class CoffeDecorator implements Drink {
+    protected Drink decorated;
+    public CoffeDecorator(Drink decorated);
+    public void water();
+}
+class DecoratorTest {
+    public static void main(String[] args);
+}
+class Tea implements Drink {
+    public void water() ;
+}
+
+class UnknowCoffe implements Drink {
+    public void water() ;
+}
+
+@enduml
